@@ -1,6 +1,17 @@
 'use strict'
 
 var isDrawing = false;
+var dummyDrawingData = {
+    bigRadius: 257,
+    smallRadius: 197,
+    point: {
+        r: 115,
+        theta: 90
+    },
+    theta: -90,
+    color: "#0000FF"
+};
+
 var canvas;
 var jsCanvas = document.getElementById('drawingArea');
 var context = jsCanvas.getContext('2d');
@@ -19,7 +30,7 @@ var disableStartButton = function(val) {
 };
 
 
-var drawingData;
+var drawingData = dummyDrawingData;
 var toggleDrawing = function(goingToDraw) {
     if (goingToDraw) {
         disableForm(true);
