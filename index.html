@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Design Designer</title>
+        <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/css/bootstrap-slider.min.css" />
+    </head>
+    <body style="padding: 5px;">
+        <div class="row" style="margin-bottom: 10px;">
+        </div>
+        <div class="row">
+            <div class="col-md-3" id="controls">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Controls</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form name="control-form">
+                            <div class="row" id="big-radius-panel">
+                                <div class="col-md-12">
+                                    <label for="big-radius">Radius of big circle</label>
+                                    <input
+                                    type="text"
+                                    name="big-radius"
+                                    id="big-radius"
+                                    data-provide="slider"
+                                    data-slider-id="big-radius-slider"
+                                    data-slider-min="50"
+                                    data-slider-max="300"
+                                    data-slider-step="1"
+                                    data-slider-value="250"
+                                    required="required">
+                                </div>
+                            </div>
+                            <div class="row" id="small-radius-panel">
+                                <div class="col-md-12">
+                                    <label for="big-radius">Radius of small circle</label>
+                                    <input
+                                    type="text"
+                                    name="small-radius"
+                                    id="small-radius"
+                                    data-provide="slider"
+                                    data-slider-id="small-radius-slider"
+                                    data-slider-min="20"
+                                    data-slider-max="250"
+                                    data-slider-step="1"
+                                    data-slider-value="137"
+                                    required="required">
+                                </div>
+                            </div>
+                            <div class="row" id="color-panel">
+                                <div class="col-md-12">
+                                    <label for="big-radius">Color</label>
+                                    <input type="color" name="drawing-color" id="drawing-color" class="form-control" value="" required="required" title="Color">
+                                </div>
+                            </div>
+                            <div class="row" id="control-panel" style="margin-top: 10px;">
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-primary" onclick="start()" id="start-btn">Start</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-default" onclick="stop()"  id="stop-btn">Stop</button>
+                                </div>
+                            </div>
+                            <div class="row" id="point-panel" style="margin-top: 10px;">
+                                <div class="col-md-12">
+                                    <label>Select Point on smaller (yellow) circle </label>                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9" id="canvas-area">
+                <canvas id="drawingArea" style="border: 1px solid black;" width="1000" height="600" onclick="setPoint(event)"> </canvas>
+            </div>
+        </div>
+        <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.4.1/bootstrap-slider.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
